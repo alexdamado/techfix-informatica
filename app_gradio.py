@@ -9,7 +9,7 @@ EMAIL = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 
 def get_db():
     url = os.getenv('SUPABASE_URL')
-    key = os.getenv('SUPABASE_KEY')
+    key = os.getenv('SUPABASE_SERVICE_ROLE_KEY')
     if not url or not key:
         raise RuntimeError('Credenciais do Supabase não configuradas.')
     return create_client(url, key)
